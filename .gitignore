@@ -1,0 +1,4 @@
+build/
+.qtc/
+.cmake/
+CMackeLists.txt.user
