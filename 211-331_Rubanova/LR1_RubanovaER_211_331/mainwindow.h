@@ -3,6 +3,13 @@
 
 #include <QMainWindow>
 
+#include <QFile>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonArray>
+#include <QStandardItem>
+#include <QClipboard>
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -19,8 +26,10 @@ public:
 
 private slots:
     void on_ok_btn_clicked();
+    void copy();
 
 private:
     Ui::MainWindow *ui;
+    void setupInfo();
 };
 #endif // MAINWINDOW_H
