@@ -20,6 +20,12 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="minimumSize">
+    <size>
+     <width>550</width>
+     <height>252</height>
+    </size>
+   </property>
    <layout class="QGridLayout" name="gridLayout">
     <item row="1" column="1">
      <widget class="QStackedWidget" name="stackedWidget">
@@ -160,7 +166,7 @@
        <widget class="QLabel" name="label">
         <property name="geometry">
          <rect>
-          <x>130</x>
+          <x>210</x>
           <y>90</y>
           <width>231</width>
           <height>51</height>

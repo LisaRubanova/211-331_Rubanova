@@ -10,6 +10,11 @@
 #include <QStandardItem>
 #include <QClipboard>
 
+#include <QCryptographicHash>
+
+#include <openssl/evp.h>
+#include <openssl/sha.h>
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -28,8 +33,23 @@ private slots:
     void on_ok_btn_clicked();
     void copy();
 
+    void on_lineEdit_2_returnPressed();
+
 private:
     Ui::MainWindow *ui;
+    QByteArray keyVecForDecrypt;
+    QByteArray initVecForDecrypt;
+    QByteArray credsDecFile;
+    QString encFileName = "../../creds.enc";
+    QString decFileName =  "../../credentials.json";
+
     void setupInfo();
+    QJsonArray findCredentialsByHostname(const QJsonArray& credentials, const QString& hostname);
+    bool encryptFile(const QByteArray &key, const QByteArray &iv);
+    QByteArray decryptFile(const QByteArray &key, const QByteArray &iv);
+    QString decryptInfo(const QString &encryptedData);
+    void genAESKeyInfo(const QString &pass, QByteArray &key, QByteArray &iv);
+    QJsonArray readFromJsonFile(QByteArray& jsonData);
+    void setup(QJsonArray& creds);
 };
 #endif // MAINWINDOW_H
