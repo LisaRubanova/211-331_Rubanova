@@ -31,7 +31,8 @@ public:
 
 private slots:
     void on_ok_btn_clicked();
-    void copy();
+    void copyLogin();
+    void copyPass();
 
     void on_lineEdit_2_returnPressed();
 
@@ -43,7 +44,6 @@ private:
     QString encFileName = "../../creds.enc";
     QString decFileName =  "../../credentials.json";
 
-    void setupInfo();
     QJsonArray findCredentialsByHostname(const QJsonArray& credentials, const QString& hostname);
     bool encryptFile(const QByteArray &key, const QByteArray &iv);
     QByteArray decryptFile(const QByteArray &key, const QByteArray &iv);
