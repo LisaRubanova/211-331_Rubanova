@@ -15,6 +15,8 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 set(OPENSSL_ROOT_DIR "D:/programs/Qt/Tools/OpenSSLv3/Win_x64/include/openssl")
 find_package(OpenSSL REQUIRED)
 
+set(WIN_DIR "D:/programs/Qt/6.8.2/msvc2022_64/include")
+
 set(PROJECT_SOURCES
         main.cpp
         mainwindow.cpp
@@ -26,6 +28,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(LR1_RubanovaER_211_331
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        form_wronghash.h form_wronghash.cpp form_wronghash.ui
+        ${WIN_DIR}
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET LR1_RubanovaER_211_331 APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

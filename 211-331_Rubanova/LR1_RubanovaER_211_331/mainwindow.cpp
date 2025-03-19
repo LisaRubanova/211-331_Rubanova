@@ -276,6 +276,6 @@ void MainWindow::genAESKeyInfo(const QString &pass, QByteArray &key, QByteArray 
     keyVecForDecrypt = hash2.left(32);
     initVecForDecrypt = hash2.right(16);
 
-    qDebug() <<  keyVecForDecrypt.toHex();
-    qDebug() << initVecForDecrypt.toHex();
+    qDebug() << "keyVecForDecrypt" << keyVecForDecrypt.toHex();
+    qDebug() << "initVecForDecrypt" << initVecForDecrypt.toHex();
 }
