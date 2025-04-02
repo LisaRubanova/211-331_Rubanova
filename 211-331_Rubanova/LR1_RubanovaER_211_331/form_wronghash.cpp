@@ -18,6 +18,6 @@ Form_wrongHash::~Form_wrongHash()
 
 void Form_wrongHash::on_pushButton_clicked()
 {
-    //quit();
+
 }
 

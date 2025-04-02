@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 
     // 4) сравнить полученный хеш с заранее рассчитанным
     const QByteArray referenceTextHashBase64 =
-        QByteArray("Q/X9XWGI03raQIQlrmEh8snx7+3pCwOjJf00A4OslgY=");
+        QByteArray("wgf+u+hGHQKl4wwipBVsYjUEmvdtcE58LGxVTImxikg=");
 
     qDebug() << "textBase = " << Qt::hex << textBase;
     qDebug() << "textSize = " << textSize;
@@ -53,6 +53,13 @@ int main(int argc, char *argv[])
     MainWindow w;
     Form_wrongHash infoWidged;
 
+    // Проверка наличия отладчика
+    if (IsDebuggerPresent()) {
+        // QMessageBox::critical(nullptr, "Обнаружен отладчик", "Приложение не может быть запущено в режиме отладки.");
+        // return -1; // Завершение работы приложения
+        qDebug() << "Обнаружен отладчик";
+    }
+
     if (checkresult != true) {
         infoWidged.show();
     } else {
@@ -60,13 +67,4 @@ int main(int argc, char *argv[])
     }
 
     return a.exec();
-
-
-    // Проверка наличия отладчика
-    // if (IsDebuggerPresent()) {
-    //    QMessageBox::critical(nullptr, "Обнаружен отладчик", "Приложение не может быть запущено в режиме отладки.");
-        //return -1; // Завершение работы приложения
-    //    qDebug() << "Отладчик";
-    //}
-
 }

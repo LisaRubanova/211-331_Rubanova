@@ -41,8 +41,8 @@ private:
     QByteArray keyVecForDecrypt;
     QByteArray initVecForDecrypt;
     QByteArray credsDecFile;
-    QString encFileName = "../../creds.enc";
-    QString decFileName =  "../../credentials.json";
+    QString encFileName = "D:/secure_as/211-331_Rubanova/LR1_RubanovaER_211_331/creds.enc";
+    QString decFileName =  "D:/secure_as/211-331_Rubanova/LR1_RubanovaER_211_331/credentials.json";
 
     QJsonArray findCredentialsByHostname(const QJsonArray& credentials, const QString& hostname);
     bool encryptFile(const QByteArray &key, const QByteArray &iv);
